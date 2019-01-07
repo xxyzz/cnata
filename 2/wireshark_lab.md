@@ -30,3 +30,24 @@
 7. By inspecting the raw data in the packet content window, do you see any headers within the data that are not displayed in the packet-listing window? If so, name one.
 
     No.
+
+## 2. The HTTP CONDITIONAL GET/response interaction
+
+8. Inspect the contents of the first HTTP GET request from your browser to the server. Do you see an "IF-MODIFIED-SINCE" line in the HTTP GET?
+
+    No.
+
+9. Inspect the contents of the server response. Did the server explicitly return the contents of the file? How can you tell?
+
+    Yes. There are ten lines of text in "Line-based text data".
+
+10. Now inspect the contents of the second HTTP GET request from your browser to the server. Do you see an "IF-MODIFIED-SINCE:" line in the HTTP GET? If so, what information follows the "IF-MODIFIED-SINCE:" header?
+
+    Yes.\
+    If-Modified-Since: Mon, 07 Jan 2019 06:59:01 GMT
+
+11. What is the HTTP status code and phrase returned from the server in response to this second HTTP GET? Did the server explicitly return the contents of the file? Explain.
+
+    HTTP/1.1 304 Not Modified\r\n\
+    No.\
+    The file is not modified, so the server doesn't need to send it again.
