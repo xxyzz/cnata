@@ -51,3 +51,21 @@
     HTTP/1.1 304 Not Modified\r\n\
     No.\
     The file is not modified, so the server doesn't need to send it again.
+
+## 3. Retrieving Long Documents
+
+12. How many HTTP GET request messages did your browser send? Which packet number in the trace contains the GET message for the Bill or Rights?
+
+    1, 16.
+
+13. Which packet number in the trace contains the status code and phrase associated with the response to the HTTP GET request?
+
+    24.
+
+14. What is the status code and phrase in the response?
+
+    200 OK.
+
+15. How many data-containing TCP segments were needed to carry the single HTTP response and the text of the Bill of Rights?
+
+    4.
