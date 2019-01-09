@@ -69,3 +69,16 @@
 15. How many data-containing TCP segments were needed to carry the single HTTP response and the text of the Bill of Rights?
 
     4.
+
+## HTML Documents with Embedded Objects
+
+16. How many HTTP GET request messages did your browser send? To which Internet addresses were these GET requests sent?
+
+    3.\
+    GET /wireshark-labs/HTTP-wireshark-file4.html HTTP/1.1\r\n\
+    GET /pearson.png HTTP/1.1\r\n\
+    GET /~kurose/cover_5th_ed.jpg HTTP/1.1\r\n\
+
+17. Can you tell whether your browser downloaded the two images serially, or whether they were downloaded from the two web sites in parallel? Explain.
+
+    They were downloaded from the two web sites in parallel. Their hosts are different. One is `gaia.cs.umass.edu`, the other is `manic.cs.umass.edu`.
