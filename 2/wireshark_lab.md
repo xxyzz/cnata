@@ -82,3 +82,15 @@
 17. Can you tell whether your browser downloaded the two images serially, or whether they were downloaded from the two web sites in parallel? Explain.
 
     They were downloaded from the two web sites in parallel. Their hosts are different. One is `gaia.cs.umass.edu`, the other is `manic.cs.umass.edu`.
+
+## HTTP Authentication
+
+18. What is the server’s response (status code and phrase) in response to the initial HTTP GET message from your browser?
+
+    HTTP/1.1 401 Unauthorized\r\n
+
+19. When your browser’s sends the HTTP GET message for the second time, what new field is included in the HTTP GET message?
+
+    Authorization: Basic d2lyZXNoYXJrLXN0dWRlbnRzOm5ldHdvcms=\r\n
+    
+    Credentials: wireshark-students:network
