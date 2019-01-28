@@ -97,3 +97,25 @@
     HELO, MAIL FROM, RCPT TO, DATA, and QUIT.
 
     Send over TCP connection.
+
+16. Suppose Alice, with a Web-based e-mail account (such as Hotmail or Gmail), sends a message to Bob, who accesses his mail from his mail server using POP3. Discuss how the message gets from Alice’s host to Bob’s host. Be sure to list the series of application-layer protocols that are used to move the message between the two hosts.
+
+    Alice uses HTTP to send email to service, then Alice's mail service uses SMTP to send email to Bob's service. And Bob uses POP3 to get email.
+
+17. Print out the header of an e-mail message you have recently received. How many Received: header lines are there? Analyze each of the header lines in the message.
+
+    30.
+    
+18. Assume you have multiple devices, and you connect to your email provider using POP3. You retrieve messages with the "download and keep" strategy from multiple devices. Can your email client tell if you have already read the message in this scenario?
+
+    No.
+
+19. Why are MX records needed? Would it not be enough to use a CNAME record? (Assume the email client looks up email addresses through a Type A query and that the target host only runs an email server.)
+
+    MX records allow the hostnames of mail servers to have simple aliases.
+
+20. What is the difference between recursive and iterative DNS queries?
+
+    Recursive: query chain.
+
+    Iterative: all replies are directly returned to one host.
