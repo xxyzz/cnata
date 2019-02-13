@@ -65,3 +65,36 @@
     Package length / RTT
 
 13. Use the `Time-Sequence-Graph(Stevens)` plotting tool to view the sequence number versus time plot of segments being sent from the client to the gaia.cs.umass.edu server. Can you identify where TCP’s slowstart phase begins and ends, and where congestion avoidance takes over? Comment on ways in which the measured data differs from the idealized behavior of TCP that we’ve studied in the text.
+
+# Wireshark Lab: UDP
+
+1. Select *one* UDP packet from your trace. From this packet, determine how many fields there are in the UDP header. (You shouldn’t look in the textbook! Answer these questions directly from what you observe in the packet trace.) Name these fields.
+
+    Source port, destination port, length, checksum.
+
+2. By consulting the displayed information in Wireshark’s packet content field for this packet, determine the length (in bytes) of each of the UDP header fields.
+
+    2 bytes
+
+3. The value in the Length field is the length of what? (You can consult the text for this answer). Verify your claim with your captured UDP packet.
+
+    The length of header and data in bytes.
+
+4. What is the maximum number of bytes that can be included in a UDP payload? (Hint: the answer to this question can be determined by your answer to 2. above)
+
+    >The field size sets a theoretical limit of 65,535 bytes (8 byte header + 65,527 bytes of data) for a UDP datagram. However the actual limit for the data length, which is imposed by the underlying IPv4 protocol, is 65,507 bytes (65,535 − 8 byte UDP header − 20 byte IP header).
+    [From wikipedia](https://en.wikipedia.org/wiki/User_Datagram_Protocol#Packet_structure)
+
+5. What is the largest possible source port number? (Hint: see the hint in 4.)
+
+    2^16 - 1 = 65535
+
+6. What is the protocol number for UDP? Give your answer in both hexadecimal and decimal notation. To answer this question, you’ll need to look into the Protocol field of the IP datagram containing this UDP segmen (see Figure 4.13 in the text, and the discussion of IP header fields).
+
+    hexadecimal: 0x11, decimal: 17
+
+7. Examine a pair of UDP packets in which your host sends the first UDP packet and the second UDP packet is a reply to this first UDP packet. (Hint: for a second packet to be sent in response to a first packet, the sender of the first packet should be the destination of the second packet). Describe the relationship between the port numbers in the two packets.
+
+    the first packet's source port = the second packet's destination port
+
+    the second packet's source port = the first packet's destination port
